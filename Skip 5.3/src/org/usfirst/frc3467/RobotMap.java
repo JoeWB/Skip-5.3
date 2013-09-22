@@ -21,4 +21,6 @@ public class RobotMap {
 	
 //Digital IO
 	public static final int pressureSwitch = 4;	
+	
+// Test!
 }
