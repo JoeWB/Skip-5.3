@@ -20,10 +20,10 @@ public abstract class CommandBase extends Command {
 
 	public static void init() {
 		driveBase = new DriveBase();	// Create new drive base subsystem
-		shooter = new Shooter();		// Create new shooter subsystem
-		harpoon = new Harpoon();		// Create new harpoon subsystem
-		angler = new Angler();			// Create new angler subsystem
-		shifter = new Shifter();		// Create new shifter subsystem
+		shooter = new Shooter();	// Create new shooter subsystem
+		harpoon = new Harpoon();	// Create new harpoon subsystem
+		angler = new Angler();		// Create new angler subsystem
+		shifter = new Shifter();	// Create new shifter subsystem
 		oi = new OI();
 	}
 
