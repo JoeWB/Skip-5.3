@@ -10,28 +10,24 @@ public class CancelGroup extends CommandBase {
 		groupCancel = group;
 	}
 	protected void initialize() {
-		if (LoaderPop.cancel) {
+		if (LoaderPop.cancel) {		// If the sequence is canceled, cancel the group
 			groupCancel.cancel();
 		}
 	}
 
 	protected void execute() {
-		// TODO Auto-generated method stub
 
 	}
 
 	protected boolean isFinished() {
-		// TODO Auto-generated method stub
 		return true;
 	}
 
-	protected void end() {
-		// TODO Auto-generated method stub
+	protected void interrupted() {
 
 	}
-
-	protected void interrupted() {
-		// TODO Auto-generated method stub
+	
+	protected void end() {
 
 	}
 

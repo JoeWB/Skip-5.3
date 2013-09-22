@@ -19,11 +19,11 @@ public abstract class CommandBase extends Command {
 	public static Shifter shifter;
 
 	public static void init() {
-		driveBase = new DriveBase();
-		shooter = new Shooter();
-		harpoon = new Harpoon();
-		angler = new Angler();
-		shifter = new Shifter();
+		driveBase = new DriveBase();	// Create new drive base subsystem
+		shooter = new Shooter();		// Create new shooter subsystem
+		harpoon = new Harpoon();		// Create new shooter subsystem
+		angler = new Angler();			// Create new shooter subsystem
+		shifter = new Shifter();		// Create new shooter subsystem
 		oi = new OI();
 	}
 

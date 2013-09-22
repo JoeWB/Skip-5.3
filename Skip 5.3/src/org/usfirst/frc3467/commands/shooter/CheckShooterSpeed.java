@@ -13,17 +13,18 @@ public class CheckShooterSpeed extends CommandBase {
 	}
 
 	protected void initialize() {
-		LoaderPop.cancel = false;
+		LoaderPop.cancel = false; // Reset variables
 		ready = false;
 	}
 
 	protected void execute() {
-		if (System.currentTimeMillis() - Shooter.time > 1500)
+		// If the shooter has been running longer than 1.5 seconds
+		// then set its state to ready
+		if (System.currentTimeMillis() - Shooter.time > 1500) 
 			ready = true;
 	}
 
 	protected boolean isFinished() {
-		// TODO Auto-generated method stub
 		if (ready) {
 			return true;
 		} else if (isTimedOut()) {
@@ -34,12 +35,10 @@ public class CheckShooterSpeed extends CommandBase {
 		}
 	}
 	protected void end() {
-		// TODO Auto-generated method stub
-
+		
 	}
 
 	protected void interrupted() {
-		// TODO Auto-generated method stub
-
+		
 	}
 }

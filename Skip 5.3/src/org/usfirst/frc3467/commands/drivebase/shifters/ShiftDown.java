@@ -4,32 +4,28 @@ import org.usfirst.frc3467.commands.CommandBase;
 
 public class ShiftDown extends CommandBase {
 	public ShiftDown() {
-		requires(shifter);
-		setTimeout(.01);
+		requires(shifter);			// Requires shifter subsystem
+		setTimeout(0.1);			// Set the timeout to 100ms
 	}
 
-	protected void end() {
-		// TODO Auto-generated method stub
+	protected void initialize() {
 
 	}
 
 	protected void execute() {
-		shifter.ShifterShiftDown();
-
-	}
-
-	protected void initialize() {
-		// TODO Auto-generated method stub
+		shifter.ShifterShiftDown(); // Shift down
 
 	}
 
 	protected void interrupted() {
-		// TODO Auto-generated method stub
+
+	}
+
+	protected void end() {
 
 	}
 
 	protected boolean isFinished() {
-		// TODO Auto-generated method stub
 		return isTimedOut();
 	}
 

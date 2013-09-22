@@ -9,14 +9,14 @@ import edu.wpi.first.wpilibj.command.WaitCommand;
 
 public class Auto extends CommandGroup {
 	public Auto(double d) {
-		//this.addSequential(new ArmCalibrate());
-		this.addParallel(new SetShooterSpeed(d));
+		//this.addSequential(new ArmCalibrate()); 	// No arm yet so no calibration
+		this.addParallel(new SetShooterSpeed(d)); 	// Bring shooter to specified speed
 
-		this.addSequential(new WaitCommand(2));
-		this.addSequential(new AutoLoaderGroup());
+		this.addSequential(new WaitCommand(2));   	// Give the shooter 2 seconds to get up to speed
+		this.addSequential(new AutoLoaderGroup());	// Fire all the frisbees
 
-		this.addParallel(new AnglerDown());
-		this.addParallel(new AnglerDown());
-		this.addParallel(new SetShooterSpeed(0.0));
+		this.addParallel(new AnglerDown());			// Put down the angler
+		this.addParallel(new AnglerDown());			// For some reason this isn't working
+		this.addParallel(new SetShooterSpeed(0.0)); // Turn off the shooter
 	}
 }

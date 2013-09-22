@@ -8,6 +8,7 @@ import edu.wpi.first.wpilibj.command.WaitCommand;
 
 public class AutoLoaderGroup extends CommandGroup {
 	public AutoLoaderGroup() {
+		// NEEDS TO BE REWRITTEN!!!
 		requires(CommandBase.harpoon);
 		double delay = 1.5;
 		double lastDelay = 1.5;

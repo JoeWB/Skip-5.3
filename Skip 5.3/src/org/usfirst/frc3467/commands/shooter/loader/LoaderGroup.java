@@ -8,24 +8,8 @@ public class LoaderGroup extends CommandGroup {
 	public LoaderGroup() {
 		requires(CommandBase.harpoon);
 
-		this.addSequential(new LoaderPop());
-		this.addSequential(new LoaderPop());
-		this.addSequential(new LoaderPop());
-		// this.addSequential(new LoadOut());
-		// this.addSequential(new WaitCommand(delay));
-
-		// this.addSequential(new LoadIn()); // Push Frisbee out
-		// this.addSequential(new WaitCommand(delay));
-		// this.addSequential(new LoadOut());
-		// this.addSequential(new WaitCommand(delay));
-
-		// this.addSequential(new LoadIn()); // Push Frisbee out
-		// this.addSequential(new WaitCommand(delay));
-		// this.addSequential(new LoadOut());
-		// this.addSequential(new WaitCommand(delay));
-
-		// this.addSequential(new LoadIn()); // Push Frisbee out
-		// this.addSequential(new WaitCommand(delay));
-		// this.addSequential(new LoadOut());
+		this.addSequential(new LoaderPop()); // Instead of customized delays
+		this.addSequential(new LoaderPop()); // Just add a bunch of loader pops!
+		this.addSequential(new LoaderPop()); // Add delays between them using the WaitCommand()
 	}
 }
