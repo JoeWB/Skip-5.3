@@ -12,7 +12,7 @@ import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 public class OI {
-	public static Joystick leftJoystick = new Joystick(1);
+	public static Joystick leftJoystick = new Joystick(1); //Left driver joystick
 	public static Joystick rightJoystick = new Joystick(2);
 	public static Gamepad gamepad = new Gamepad(3);
 
