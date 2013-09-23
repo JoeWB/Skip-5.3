@@ -12,15 +12,15 @@ public class DriveBase extends Subsystem {
 	private Victor leftVictors, rightVictors;
 
 	public DriveBase() {
-		leftVictors = new Victor(RobotMap.leftVictors);
-		rightVictors = new Victor(RobotMap.rightVictors);
-		drive = new RobotDrive(leftVictors, rightVictors);
-		drive.setSafetyEnabled(false);
+		leftVictors = new Victor(RobotMap.leftVictors); //defines the left victor based on the robotmap
+		rightVictors = new Victor(RobotMap.rightVictors); //defines the right victor based on the robotmap
+		drive = new RobotDrive(leftVictors, rightVictors); //establishes the drive command
+		drive.setSafetyEnabled(false); //disables the safety
 	}
 	public void drive(double left, double right) {
-		drive.tankDrive(left, right);
+		drive.tankDrive(left, right); //creates tank drive
 	}
 	protected void initDefaultCommand() {
-		setDefaultCommand(new DriveJoysticks());
+		setDefaultCommand(new DriveJoysticks()); 
 	}
 }
