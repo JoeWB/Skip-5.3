@@ -36,7 +36,6 @@ public class CommandBasedRobot extends IterativeRobot {
 		comp = new Compressor(RobotMap.pressureSwitch, RobotMap.compressor);
 		comp.start();
 		CommandBase.init();
-		// Oh hai der
 	}
 	
 	public void autonomousInit() {
