@@ -5,6 +5,7 @@ public class RobotMap {
 	// PWM Out
 	public static final int leftVictors = 1;
 	public static final int rightVictors = 2;
+	public static int armTalon = 3;
 	public static final int shooterMotors = 4;
 	
 	// Solenoids
@@ -21,6 +22,10 @@ public class RobotMap {
 	
 	// Digital IO
 	public static final int pressureSwitch = 4;
+	public static int armEncSigB = 1;
+	public static int armEncSigA = 2;
+	public static int armDigitalIO = 3;
+
 	
 	// Hello world
 }
