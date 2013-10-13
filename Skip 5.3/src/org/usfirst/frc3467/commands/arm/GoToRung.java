@@ -32,6 +32,7 @@ public class GoToRung extends CommandBase {
 	
 	protected boolean isFinished() {
 		if (setPoint - arm.enc.getRaw() <= 25) {
+			arm.driveWinch(0.0); //Doug said code could have stopped executing... He was right
 			return true;
 		}
 		if (arm.enabled && arm.getPIDController().onTarget()) {
