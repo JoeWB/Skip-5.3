@@ -2,7 +2,7 @@ package org.usfirst.frc3467;
 
 public class RobotMap {
 	
-	public static int maxEncCount = 1850;
+	public static int maxEncCount = 2100;
 	
 	// PWM Out
 	public static final int armTalon = 3;
@@ -32,4 +32,6 @@ public class RobotMap {
 	
 	// Constants
 	public static final double winchCalibrateSpeed = 0.3;
+	
+	public static final double armConstant = -0.01;
 }

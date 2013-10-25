@@ -1,12 +1,13 @@
 package org.usfirst.frc3467;
 
-import org.usfirst.frc3467.commands.PrepArm;
 import org.usfirst.frc3467.commands.arm.AutoClimb;
+import org.usfirst.frc3467.commands.arm.CancelClimb;
 import org.usfirst.frc3467.commands.arm.DriveCalibrate;
 import org.usfirst.frc3467.commands.arm.GoToRung;
 import org.usfirst.frc3467.commands.arm.MagicButtonEight;
 import org.usfirst.frc3467.commands.arm.PistonDown;
 import org.usfirst.frc3467.commands.arm.PistonUp;
+import org.usfirst.frc3467.commands.arm.PrepArm;
 import org.usfirst.frc3467.commands.arm.PullUp;
 import org.usfirst.frc3467.commands.drivebase.shifters.ShiftDown;
 import org.usfirst.frc3467.commands.drivebase.shifters.ShiftUp;
@@ -48,6 +49,7 @@ public class OI {
 	Button magic8 = new JoystickButton(operatorJoystick, 8);
 	Button armPrep = new JoystickButton(operatorJoystick, 12);
 	Button autoClimb = new JoystickButton(operatorJoystick, 1);
+	Button cancelClimb = new JoystickButton(operatorJoystick, 11);
 	
 	public OI() {
 		shiftDown.whenPressed(new ShiftDown());
@@ -66,9 +68,10 @@ public class OI {
 		pistonDown.whenPressed(new PistonDown());
 		pullUp.whenPressed(new PullUp());
 		magic8.whenPressed(new MagicButtonEight());
-		armPrep.whenPressed(new GoToRung(800));
+		armPrep.whenPressed(new GoToRung(800, true));
 		autoClimb.whenPressed(new AutoClimb());
 		armPrepGamepad.whenPressed(new PrepArm());
+		cancelClimb.whenPressed(new CancelClimb(true));
 		
 		SmartDashboard.putData("Calibrate Arm", new DriveCalibrate());
 	}

@@ -31,13 +31,11 @@ public class DriveArmManual extends CommandBase {
 				if (up)
 					maxSpeed = (cons * (RobotMap.maxEncCount - arm.enc.getRaw()));
 				else
-					maxSpeed = -(cons * (0 + arm.enc.getRaw()));
-				
+					maxSpeed = (RobotMap.armConstant * (0 + arm.enc.getRaw()));
 				if (maxSpeed > 1.0)
 					maxSpeed = 1.0;
 				else if (maxSpeed < -1.0)
-					maxSpeed = -1.0;
-				// System.out.println("Driving");
+					maxSpeed = -1.0; // System.out.println("Driving");
 				if (OI.operatorJoystick.getY() <= maxSpeed && !up)
 					arm.driveWinch(maxSpeed);
 				else if (OI.operatorJoystick.getY() >= maxSpeed && up)

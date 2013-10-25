@@ -32,9 +32,14 @@ public class Arm extends PIDSubsystem {
 		extendPiston = new Solenoid(RobotMap.armPistonDown);	// Create new solenoid instance for extending the arm
 		retractPiston = new Solenoid(RobotMap.armPistonUp);		// Create new solenoid instance for retracting the arm
 		disablePID();											// Disable the PID subsystem to start
-		this.setInputRange(0, 2100);			// Set the input range
+		this.setInputRange(0, 2100);							// Set the input range
 		this.setAbsoluteTolerance(15);							// Set tolerance for onTarget()
 		setSetpoint(0);											// Set the set point to zero
+		initialize();
+	}
+	
+	public void initialize() {
+		// Scheduler.getInstance().add(new DriveCalibrate());
 	}
 	
 	protected double returnPIDInput() {

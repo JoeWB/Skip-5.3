@@ -14,20 +14,28 @@ public class PullUp extends CommandBase {
 	
 	protected void initialize() {
 		time = System.currentTimeMillis();
+		if (this.getGroup() == null) {
+			CancelClimb.cancelClimb = false;
+		}
 	}
 	
 	protected void execute() {
-		if (arm.enc.get() >= -200)
-			arm.driveWinch(-1.0);// * arm.enc.get() * 0.007);
-		else {
-			arm.setSetpoint(0);
-			arm.enablePID();
-		}
+		arm.driveWinch(-1.0);
+		// if (arm.enc.get() >= -200)
+		// arm.driveWinch(-1.0);// * arm.enc.get() * 0.007);
+		// else {
+		// arm.driveWinch(-0.009 * (0 + arm.enc.getRaw()));
+		// }
 		if (System.currentTimeMillis() - time >= 400)
 			arm.retractPiston();
 	}
 	
 	protected boolean isFinished() {
+		if (CancelClimb.cancelClimb) {
+			arm.driveWinch(0);
+			return true;
+		}
+		
 		if (!arm.limitSwitch.get()) {
 			SmartDashboard.putString("PID Status", "Limit switch");
 			// arm.disablePID();

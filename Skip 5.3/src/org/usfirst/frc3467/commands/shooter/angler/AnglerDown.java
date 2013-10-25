@@ -13,9 +13,7 @@ public class AnglerDown extends CommandBase {
 	}
 	
 	protected void execute() {
-		
 		angler.anglerPistonDown();
-		
 	}
 	
 	protected void initialize() {
