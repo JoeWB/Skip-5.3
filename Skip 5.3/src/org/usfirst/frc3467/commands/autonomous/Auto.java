@@ -9,7 +9,7 @@ import edu.wpi.first.wpilibj.command.WaitCommand;
 
 public class Auto extends CommandGroup {
 	public Auto(double d) {
-		// this.addSequential(new ArmCalibrate()); // No arm yet so no calibration
+		// this.addSequential(new DriveCalibrate()); // No arm yet so no calibration
 		this.addParallel(new SetShooterSpeed(d)); 	// Bring shooter to specified speed
 		
 		this.addSequential(new WaitCommand(2));   	// Give the shooter 2 seconds to get up to speed

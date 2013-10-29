@@ -2,12 +2,14 @@ package org.usfirst.frc3467.subsystems.arm;
 
 import org.usfirst.frc3467.RobotMap;
 import org.usfirst.frc3467.commands.arm.DriveArmManual;
+import org.usfirst.frc3467.commands.arm.DriveCalibrate;
 
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.PIDSubsystem;
+import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Arm extends PIDSubsystem {
@@ -35,11 +37,11 @@ public class Arm extends PIDSubsystem {
 		this.setInputRange(0, 2100);							// Set the input range
 		this.setAbsoluteTolerance(15);							// Set tolerance for onTarget()
 		setSetpoint(0);											// Set the set point to zero
-		initialize();
+		// initialize();
 	}
 	
 	public void initialize() {
-		// Scheduler.getInstance().add(new DriveCalibrate());
+		Scheduler.getInstance().add(new DriveCalibrate());
 	}
 	
 	protected double returnPIDInput() {

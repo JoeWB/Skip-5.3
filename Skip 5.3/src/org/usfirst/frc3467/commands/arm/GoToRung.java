@@ -59,7 +59,7 @@ public class GoToRung extends CommandBase {
 	}
 	
 	protected void end() {
-		
+		System.out.println("Go to rung ended");
 	}
 	
 	protected void interrupted() {

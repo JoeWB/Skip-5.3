@@ -3,7 +3,6 @@ package org.usfirst.frc3467;
 import org.usfirst.frc3467.commands.arm.AutoClimb;
 import org.usfirst.frc3467.commands.arm.CancelClimb;
 import org.usfirst.frc3467.commands.arm.DriveCalibrate;
-import org.usfirst.frc3467.commands.arm.GoToRung;
 import org.usfirst.frc3467.commands.arm.MagicButtonEight;
 import org.usfirst.frc3467.commands.arm.PistonDown;
 import org.usfirst.frc3467.commands.arm.PistonUp;
@@ -56,9 +55,9 @@ public class OI {
 		shiftUp.whenPressed(new ShiftUp());
 		
 		setShooterSpeedA.whenPressed(new SetShooterSpeed(0.85));
-		setShooterSpeedB.whenPressed(new SetShooterSpeed(1.00));
+		setShooterSpeedB.whenPressed(new SetShooterSpeed(0.87));
 		setShooterSpeedX.whenPressed(new SetShooterSpeed(0.83));
-		setShooterSpeedY.whenPressed(new SetShooterSpeed(0.80));
+		setShooterSpeedY.whenPressed(new SetShooterSpeed(1.00));
 		setShooterSpeedStart.whenPressed(new SetShooterSpeed(0));
 		shooterAnglerToggle.whenPressed(new AnglerToggle());
 		shooterLoaderPop.whenPressed(new LoaderPop());
@@ -68,12 +67,11 @@ public class OI {
 		pistonDown.whenPressed(new PistonDown());
 		pullUp.whenPressed(new PullUp());
 		magic8.whenPressed(new MagicButtonEight());
-		armPrep.whenPressed(new GoToRung(800, true));
+		armPrep.whenPressed(new PrepArm());
 		autoClimb.whenPressed(new AutoClimb());
 		armPrepGamepad.whenPressed(new PrepArm());
 		cancelClimb.whenPressed(new CancelClimb(true));
 		
 		SmartDashboard.putData("Calibrate Arm", new DriveCalibrate());
 	}
-	
 }

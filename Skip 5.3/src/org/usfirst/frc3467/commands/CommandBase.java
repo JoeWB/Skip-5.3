@@ -28,6 +28,7 @@ public abstract class CommandBase extends Command {
 		shifter = new Shifter();		// Create new shifter subsystem
 		arm = new Arm();			// Create new arm subsystem
 		oi = new OI();
+		arm.initialize();
 	}
 	
 	public CommandBase(String name) {

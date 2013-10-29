@@ -9,7 +9,7 @@ public class AnglerDown extends CommandBase {
 	}
 	
 	protected void end() {
-		
+		System.out.println("Go to rung ended");
 	}
 	
 	protected void execute() {
